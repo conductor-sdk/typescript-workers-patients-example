@@ -8,7 +8,7 @@ import { updatePatientWorker, findPatientWorker } from "./workers";
 import express from "express";
 import bodyParser from "body-parser";
 
-const WORKFLOW_NAME = "PatientWorkflowJs";
+const WORKFLOW_NAME = "PatientWorkflow";
 const WORKFLOW_VERSION = 1;
 
 const serverSettings = {
