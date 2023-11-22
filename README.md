@@ -11,7 +11,8 @@ The quickest way to set this up is to grant Unrestricted Worker,
 Workflow Manager roles.
 
 ### Database setup
-Workflow execution command is at the end of this document. Example input for the workflow execution specifies local postgres database `patients` with user `patients` and password `patients`, no SSL, `patients1` (meant to serve as local) and `patients2` tables (meant to serve as external) in `public` schema.
+
+#### Native Setup
 
 Workflow execution command is at the end of this document. Example input for the workflow execution specifies local postgres database with:
 * username: _patients_
@@ -49,7 +50,9 @@ INSERT INTO patients2 VALUES ('John', 'Smith', '1983-05-21'::date, true);
 ```
 or
 
-`docker-compose up` will create a container with the database in it
+#### Docker Setup
+
+`docker-compose up` will create a container with the database in it and also initialize it.
 
 ### Run the Application
 Navigate to the root of the cloned repository and run the following command
