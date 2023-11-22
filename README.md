@@ -46,12 +46,15 @@ or
 
 ### Run the Application
 Navigate to the root of the cloned repository and run the following command
+
 ```
 yarn &&
 ts-node src/main.ts
 ```
+
 or for node
-````
+
+```
 yarn &&
 yarn build &&
 node dist/main.js
