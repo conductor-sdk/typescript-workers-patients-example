@@ -63,8 +63,6 @@ Make sure this workflow definition is added to your Orkes instance if not testin
 
 ### Trigger the workflow
 
-#### Using Docker DB
-
 ```
  curl -X POST localhost:3000/ --data '{"localTable":"patients1","externalTable":"patients2","dob":"1983-05-21","LocalDBConnectionString":"postgres://patients:patients@localhost:5432/patients","last_name":"Smith","first_name":"John","ExternalDBConnectionString":"postgres://patients:patients@localhost:5432/patients"}' -H "Content-Type: application/json"
 ```
