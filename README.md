@@ -46,10 +46,12 @@ or
 
 ### Run the Application
 Navigate to the root of the cloned repository and run the following command
+
 ```
 yarn &&
 ts-node src/main.ts
 ```
+
 or for node
 ```
 yarn &&
@@ -75,3 +77,4 @@ curl -X POST localhost:3000/ --data '{"localTable":"patients1","externalTable":"
 ```
 
 The above command should result in a successfult workflow execution of the PatientWorkflow similar to https://play.orkes.io/execution/ffe5f01d-83fb-11ee-b9e2-3e6b0496d0cf?tab=diagram.
+
