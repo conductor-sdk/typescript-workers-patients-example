@@ -11,13 +11,20 @@ The quickest way to set this up is to grant Unrestricted Worker,
 Workflow Manager roles.
 
 ### Database setup
-Workflow execution command is at the end of this document. Example input for the workflow execution specifies local postgres database `test` with user `postgres`,
-no password, no SSL, `patients1` (meant to serve as local) and `patients2` tables (meant to serve as external) in `public` schema.
+Workflow execution command is at the end of this document. Example input for the workflow execution specifies local postgres database `patients` with user `patients` and password `patients`, no SSL, `patients1` (meant to serve as local) and `patients2` tables (meant to serve as external) in `public` schema.
+
+Workflow execution command is at the end of this document. Example input for the workflow execution specifies local postgres database with:
+* username: _patients_
+* password: _patients_
+* database: _patients_
+* no SSL
+* table `patients1` (meant to serve as local) in `public` schema
+* table `patients2` (meant to serve as external) in `public` schema
 
 Run following commands from the command line:
 ```
-createdb test
-psql test
+createdb patients
+psql patients
 ```
 You should be logged into the test database via psql.
 
@@ -53,7 +60,6 @@ ts-node src/main.ts
 ```
 
 or for node
-
 ```
 yarn &&
 yarn build &&
@@ -70,3 +76,4 @@ Make sure this workflow definition is added to your Orkes instance if not testin
 ```
 
 The above command should result in a successfult workflow execution of the PatientWorkflow similar to https://play.orkes.io/execution/ffe5f01d-83fb-11ee-b9e2-3e6b0496d0cf?tab=diagram.
+
