@@ -51,7 +51,7 @@ yarn &&
 ts-node src/main.ts
 ```
 or for node
-````
+```
 yarn &&
 yarn build &&
 node dist/main.js
@@ -62,8 +62,16 @@ Make sure this workflow definition is added to your Orkes instance if not testin
 
 ### Trigger the workflow
 
+#### Using Docker DB
+
 ```
  curl -X POST localhost:3000/ --data '{"localTable":"patients1","externalTable":"patients2","dob":"1983-05-21","LocalDBConnectionString":"postgres://patients:patients@localhost:5432/patients","last_name":"Smith","first_name":"John","ExternalDBConnectionString":"postgres://patients:patients@localhost:5432/patients"}' -H "Content-Type: application/json"
+```
+
+#### Using native DB
+
+```
+curl -X POST localhost:3000/ --data '{"localTable":"patients1","externalTable":"patients2","dob":"1983-05-21","LocalDBConnectionString":"postgres://postgres:postgres@localhost:5432/test","last_name":"Smith","first_name":"John","ExternalDBConnectionString":"postgres://postgres:postgres@localhost:5432/test"}' -H "Content-Type: application/json"
 ```
 
 The above command should result in a successfult workflow execution of the PatientWorkflow similar to https://play.orkes.io/execution/ffe5f01d-83fb-11ee-b9e2-3e6b0496d0cf?tab=diagram.
