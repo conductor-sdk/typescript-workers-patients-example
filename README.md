@@ -11,8 +11,7 @@ The quickest way to set this up is to grant Unrestricted Worker,
 Workflow Manager roles.
 
 ### Database setup
-Workflow execution command is at the end of this document. Example input for the workflow execution specifies local postgres database `test` with user `postgres`,
-no password, no SSL, `patients1` (meant to serve as local) and `patients2` tables (meant to serve as external) in `public` schema.
+Workflow execution command is at the end of this document. Example input for the workflow execution specifies local postgres database `patients` with user `patients` and password `patients`, no SSL, `patients1` (meant to serve as local) and `patients2` tables (meant to serve as external) in `public` schema.
 
 Run following commands from the command line:
 ```
@@ -68,12 +67,6 @@ Make sure this workflow definition is added to your Orkes instance if not testin
 
 ```
  curl -X POST localhost:3000/ --data '{"localTable":"patients1","externalTable":"patients2","dob":"1983-05-21","LocalDBConnectionString":"postgres://patients:patients@localhost:5432/patients","last_name":"Smith","first_name":"John","ExternalDBConnectionString":"postgres://patients:patients@localhost:5432/patients"}' -H "Content-Type: application/json"
-```
-
-#### Using native DB
-
-```
-curl -X POST localhost:3000/ --data '{"localTable":"patients1","externalTable":"patients2","dob":"1983-05-21","LocalDBConnectionString":"postgres://postgres:postgres@localhost:5432/test","last_name":"Smith","first_name":"John","ExternalDBConnectionString":"postgres://postgres:postgres@localhost:5432/test"}' -H "Content-Type: application/json"
 ```
 
 The above command should result in a successfult workflow execution of the PatientWorkflow similar to https://play.orkes.io/execution/ffe5f01d-83fb-11ee-b9e2-3e6b0496d0cf?tab=diagram.
